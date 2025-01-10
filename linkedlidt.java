@@ -18,5 +18,5 @@ public class linkedlidt{
     }
     public static void main(String[] args) {
         
-    }}
+    }
 }
