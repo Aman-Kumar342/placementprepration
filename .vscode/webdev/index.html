@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .todo-list {
+            margin: 20px 0;
+        }
+        .todo-item {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 60%;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do Application</h1>
+    <input type="text" id="todoInput" placeholder="Enter a new To-Do">
+    <button onclick="addTodo()">Add New To-Do</button>
+
+    <div class="todo-list">
+        <h4 class="todo-item">Add ToDo 1</h4>
+        <h4 class="todo-item">Add ToDo 2</h4>
+        <h4 class="todo-item">Add ToDo 3</h4>
+    </div>
+    <script>
+        function addTodo() {
+            let todoList = document.querySelector(".todo-list");
+            let todoInput = document.getElementById("todoInput");
+            let newTodoText = todoInput.value.trim();
+            if (newTodoText !== "") {
+                let newTodo = document.createElement("h4");
+                newTodo.className = "todo-item";
+                newTodo.textContent = newTodoText;
+                todoList.appendChild(newTodo);
+                todoInput.value = ""; 
+            } else {
+                alert("Please enter a To-Do item!");
+            }
+        }
+    </script>
+</body>
+</html>
